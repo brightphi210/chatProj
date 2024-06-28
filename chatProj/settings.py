@@ -88,8 +88,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chatProj.wsgi.application'
 ASGI_APPLICATION = "chatProj.asgi.application"
 
+# CHANNEL_LAYERS = {
+#     "default": {"BACKEND": "channels.layers.InMemoryChannelLayer"},
+# }
+
 CHANNEL_LAYERS = {
-    "default": {"BACKEND": "channels.layers.InMemoryChannelLayer"},
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ['redis://red-cpvjd3qju9rs73agf0m0:6379'],
+        },
+    },
 }
 
 # Database
