@@ -11,7 +11,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatProj.settings')
 django_asgi_app = get_asgi_application()
 
 application = ProtocolTypeRouter({
-    "http": django_asgi_app,
+    "https": django_asgi_app,
     "websocket": URLRouter(
         routing.websocket_urlpatterns
     )
