@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chatApp', 
-    'channels',
     'rest_framework',
     "corsheaders",
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -85,21 +85,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chatProj.wsgi.application'
 ASGI_APPLICATION = "chatProj.asgi.application"
+WSGI_APPLICATION = 'chatProj.wsgi.application'
 
 # CHANNEL_LAYERS = {
 #     "default": {"BACKEND": "channels.layers.InMemoryChannelLayer"},
 # }
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": ['redis://red-cpvjd3qju9rs73agf0m0:6379'],
-        },
-    },
-}
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -113,6 +105,15 @@ CHANNEL_LAYERS = {
 
     
 # postgresql://chat_9qba_user:Bg14oHZvFN0pTxDuM04aGeKVfccwKnJI@dpg-cpuo1juehbks73els0v0-a.ohio-postgres.render.com/chat_9qba
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ['redis://red-cpvjd3qju9rs73agf0m0:6379'],
+        },
+    },
+}
 import dj_database_url
 
 DATABASES = {
