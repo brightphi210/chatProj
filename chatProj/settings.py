@@ -111,7 +111,7 @@ CHANNEL_LAYERS = {
 #     }
 # }
 
-
+    
 # postgresql://chat_9qba_user:Bg14oHZvFN0pTxDuM04aGeKVfccwKnJI@dpg-cpuo1juehbks73els0v0-a.ohio-postgres.render.com/chat_9qba
 import dj_database_url
 
