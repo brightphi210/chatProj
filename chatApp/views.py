@@ -55,10 +55,8 @@ class CreateRoomView(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
 
         room_name = request.data.get('room_name')
-        if Room.objects.filter(name=room_name).exists():
+        if Room.objects.filter(room_name=room_name).exists():
             return Response({'message': 'Room already exists'}, status=status.HTTP_400_BAD_REQUEST)
-        
-
 
         response = super().create(request, *args, **kwargs)
         
